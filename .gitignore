@@ -1,0 +1,34 @@
+# ===== .NET 构建产物（编译生成，产物最终复制到 dist/）=====
+src/bin/
+src/obj/
+
+# ===== 项目内 NuGet 包缓存 =====
+# nuget.config 把 globalPackagesFolder 固定在 .nuget/（离线编译、不占 C 盘）。
+# 这是缓存，不进 git；新 clone 后第一次编译前需联网跑一次 dotnet restore，
+# 包会按 nuget.config 重新落到 .nuget/，之后的编译照旧离线。
+.nuget/
+
+# ===== 编译临时/缓存目录 =====
+# 编译时 TMP/TEMP、DOTNET_CLI_HOME、NuGet HTTP 缓存的重定向落点（见 AGENTS.md）
+.tmp/
+
+# ===== 旧版本备份 =====
+# 编译前从 dist 备份出来的旧产物，格式 backup/<yyyyMMdd-HHmmss>/
+backup/
+
+# ===== 交付目录 =====
+# dist 是编译产物 + 运行时数据：config.json 缺失时程序自动用默认值重建，
+# logs/、*.txt 是运行日志/测试输出，都可再生成，整体不进 git。
+dist/
+
+# ===== IDE / 编辑器 =====
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# ===== 操作系统 =====
+Thumbs.db
+Desktop.ini
+.DS_Store

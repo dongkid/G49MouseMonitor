@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- 用带 Windows 10 19041 API 的目标框架，才能调用系统通知（Windows.UI.Notifications） -->
+    <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>G49BatteryMonitor</AssemblyName>
+    <RootNamespace>G49BatteryMonitor</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <Product>G49 鼠标电量监控</Product>
+    <NeutralLanguage>zh-Hans</NeutralLanguage>
+    <!-- 唯一的 NuGet 依赖是微软官方的 Windows API 投影包（发系统通知必须用它），
+         缓存目录已用 nuget.config 固定到项目文件夹里，不占 C 盘 -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+</Project>
